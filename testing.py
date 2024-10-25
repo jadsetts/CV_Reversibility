@@ -7,7 +7,7 @@ import scipy.stats as sst
 #Load simulated data
 file=r'C:\Users\jadse\Desktop\Postdoc\Coding\CV_Fitting\SimulationData\fakeData.txt'
 noiseVal=0.01
-potential,current=plotSimulatedData(file,noiseVal,1)
+potential,current=addNoiseTo(file,noiseVal,1)
 
 #Make specific zones
 sepVal=20
@@ -35,7 +35,7 @@ import scipy
 #Load data
 file=r'C:\Users\jadse\Desktop\Postdoc\Coding\CV_Fitting\SimulationData\LTO_SECCM-CV.txt'
 bins=10
-potential,current = plotExperimentalData(file,bins,1)
+potential,current = smoothData(file,bins,1)
 
 #Make specific zones
 sepVal=90
@@ -48,7 +48,7 @@ final_peakPos,booleanArray,listOfLists = findAndLabelZones(potential,current,sep
 # findReversibility(final_peakPos, booleanArray, listOfLists,fitting,fittingArrayOption)
 
 #Find reversibility from peak heights, using an array for fitting
-fitting=[100,200]
+fittingArray=[100,200]
 fittingArrayOption=0 #Set to 0 if you want to use 'fittingArray', 1 if you dont want to use 'fitting'. Check above 2 lines.
-findReversibility(final_peakPos, booleanArray, listOfLists,fitting,fittingArrayOption)
+findReversibility(final_peakPos, booleanArray, listOfLists,fittingArray,fittingArrayOption)
 
