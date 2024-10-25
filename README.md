@@ -12,6 +12,16 @@ Once zones are created, the zones are designated as 'short' or 'long' by a user 
 
 ![Picture2](https://github.com/user-attachments/assets/683061c7-bb3f-46fe-84bf-3e21ebea3188)
 
-Once separated into zones, a user input is taken for the amount of data points to be used before the dot on the trace as a length. The data points in this length are averaged and fit with a line (red and orange below). These lines are checked for when it intersects with the maximum or minimum of the next short zone. The peak heights are found from the difference between the intercept and peak maximum(length of purple and green lines). Peak heights are reported to the user as described above.
+Once separated into zones, a user input is taken for the amount of data points to be used before the dot on the trace as a length. The data points in this length are averaged and fit with a line (red and orange below). These lines are checked for when it intersects with the maximum or minimum of the next short zone. The peak heights are found from the difference between the intercept and peak maximum(length of purple and green lines). Peak heights are reported to the user as described above. This function will only work if a long zone is followed by a short zone, and it will work for every subsequent long to short zone.
 
 ![Picture1](https://github.com/user-attachments/assets/cf1cf1cf-e7c2-4895-8fb6-c7620c14c9f5)
+
+Below is an example of the code failing to produce the desired result because the minimum separation distance between zones was set too low. Tens of zones were identified and the code failed.
+
+![Picture4](https://github.com/user-attachments/assets/ebbab8c3-4fd1-4ee1-9eab-f2bc702ad6e4)
+
+Other issues:
+
+If tops of peaks are identified, add noise.
+If the whole CV is yellow, smooth CV.
+If you cannot identify the long zones appropriately, sometimes only precise percent values work.
