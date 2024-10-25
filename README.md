@@ -6,9 +6,9 @@ This code takes in separate potential and current columns of a CV, finds the pea
 
 ![Picture3](https://github.com/user-attachments/assets/99c157af-2f1d-43d1-a1cd-fd2933fb6b21)
 
-The code works by finding derivatives of the data and looking for inflections (colored yellow in image). This depends on the noise of the data and the flatness of it. If the CV is incredibly resistive, this likely won't work and you will need to first subtract a baseline from it. This code has functionality for adding noise to CVs and smoothing CVs to reduce noise. Once a series of inflections are identified, these inflections are grouped by a minimum distance variable. Play with this variable for datasets with differing data acquisition rates. 
+The code works by finding derivatives of the data and looking for inflections (colored yellow in image). This depends on the noise of the data and the flatness of it. If the CV is incredibly resistive, this likely won't work and you will need to first subtract a baseline from it. This code has functionality for adding noise to CVs and smoothing CVs to reduce noise. Once a series of inflections are identified, these inflections are grouped by a minimum distance user variable. Play with this variable for datasets with differing data acquisition rates. 
 
-Once zones are created, the zones are designated as 'short' or 'long' by a user variable. This variable takes the average of all zone lengths and sorts the zones by checking if each zone is above (long) or below (short) the product of the user % input and the average zone length. Long and short are written on the trace.
+Once zones are created, the zones are designated as 'short' or 'long' by a user variable. This variable takes the average of all zone lengths and sorts the zones by checking if each zone is above (long) or below (short) the product of the user input and the average zone length. Long and short are written on the trace.
 
 ![Picture2](https://github.com/user-attachments/assets/683061c7-bb3f-46fe-84bf-3e21ebea3188)
 
