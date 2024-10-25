@@ -1,6 +1,6 @@
 #This is data input for only one CV, but there's some code to bring in a few CVs.
 #The CV must be one full sweep to work properly.
-def plotSimulatedData(data, noiseValue=0.02,graphOption=0):
+def addNoiseTo(data, noiseValue=0.02,graphOption=0):
 
     nD=np.loadtxt(file)
     potential=nD[:,0]-4.2
@@ -37,7 +37,7 @@ def plotSimulatedData(data, noiseValue=0.02,graphOption=0):
 #Smoothing is likely necessary and you need to do some form of smoothing.
 #Consider your data density and play with the bin number.
 
-def plotExperimentalData(data, smoothBinNumber=50,graph=1):
+def smoothData(data, smoothBinNumber=50,graph=1):
     nD=np.loadtxt(file)
     potential=nD[:,0]
     current=nD[:,1]
